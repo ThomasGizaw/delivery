@@ -1,10 +1,9 @@
 "use client";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export default function TopNav({ onToggleAction }: { onToggleAction: () => void }) {
-  const router = useRouter();
   const pathname = usePathname();
   const isMenu = pathname === "/menu";
   const [showSearch, setShowSearch] = useState(false);

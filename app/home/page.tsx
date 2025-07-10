@@ -56,12 +56,10 @@ const mockFeed = [
 ];
 
 export default function HomeFeed() {
-  const [feed, setFeed] = useState(mockFeed);
-  const [cart, setCart] = useState<number[]>([]);
+  const [feed] = useState(mockFeed);
   const [saved, setSaved] = useState<number[]>([]);
 
   const handleAddToCart = useCallback((id: number) => {
-    setCart((prev) => [...prev, id]);
     alert("Added to cart!");
   }, []);
 
