@@ -2,6 +2,7 @@
 import { useState, useCallback } from "react";
 import TopNav from "./../components/TopNav";
 import BottomNav from "./../components/BottomNav";
+import Image from "next/image";
 
 const mockMenu = [
   {
@@ -25,11 +26,9 @@ const mockMenu = [
 ];
 
 export default function MenuPage() {
-  const [cart, setCart] = useState<number[]>([]);
   const [saved, setSaved] = useState<number[]>([]);
 
   const handleAddToCart = useCallback((id: number) => {
-    setCart((prev) => [...prev, id]);
     alert("Added to cart!");
   }, []);
 
@@ -44,7 +43,7 @@ export default function MenuPage() {
       <div className="grid grid-cols-2 gap-4 w-full max-w-md px-4">
         {mockMenu.map((dish) => (
           <div key={dish.id} className="bg-white rounded-xl shadow p-2 flex flex-col items-center">
-            <img src={dish.image} alt={dish.name} className="w-full h-28 object-cover rounded-lg mb-2" />
+            <Image src={dish.image} alt={dish.name} width={200} height={112} className="w-full h-28 object-cover rounded-lg mb-2" />
             <div className="font-semibold text-center mb-1">{dish.name}</div>
             <div className="text-orange-500 font-bold mb-1">${dish.price.toFixed(2)}</div>
             <div className="flex gap-2">

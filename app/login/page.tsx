@@ -10,7 +10,7 @@ export default function LoginPage() {
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const router = useRouter();
+  // Remove: const router = useRouter();
 
   async function handleSocialLogin(provider: "google" | "facebook" | "apple") {
     setLoading(true);
