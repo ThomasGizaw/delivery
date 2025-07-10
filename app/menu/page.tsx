@@ -41,7 +41,7 @@ export default function MenuPage() {
       <TopNav onToggleAction={() => window.location.href = "/home"} />
       <h1 className="text-2xl font-bold my-4">Menu</h1>
       <div className="grid grid-cols-2 gap-4 w-full max-w-md px-4">
-        {mockMenu.map((dish) => (
+        {mockMenu.map(dish => (
           <div key={dish.id} className="bg-white rounded-xl shadow p-2 flex flex-col items-center">
             <Image src={dish.image} alt={dish.name} width={200} height={112} className="w-full h-28 object-cover rounded-lg mb-2" />
             <div className="font-semibold text-center mb-1">{dish.name}</div>
